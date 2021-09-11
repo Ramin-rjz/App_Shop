@@ -16,35 +16,42 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <ImageView
-                android:src="@drawable/ic_menu"
                 android:id="@+id/btnmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:src="@drawable/ic_menu" />
 
             <ImageView
                 android:id="@+id/btncart"
-                android:layout_centerVertical="true"
-                android:src="@drawable/shoppingcart"
-                android:layout_marginLeft="8dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/shoppingcart" />
 
             <ImageView
                 android:id="@+id/btnsearch"
-                android:layout_marginLeft="20dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/search"
-                android:layout_toRightOf="@id/btncart"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/btncart"
+                android:src="@drawable/search" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="18dp"
+                android:layout_toLeftOf="@id/btnmenu"
+                android:src="@drawable/digilogo" />
 
         </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
