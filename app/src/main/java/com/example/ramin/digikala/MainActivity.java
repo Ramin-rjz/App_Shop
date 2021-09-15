@@ -15,10 +15,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ss.com.bannerslider.banners.Banner;
+import ss.com.bannerslider.banners.DrawableBanner;
+import ss.com.bannerslider.views.BannerSlider;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    DrawerLayout drawer;
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +34,31 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+
+        ImageView btmenu=(ImageView)findViewById(R.id.btnmenu);
+        btmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.openDrawer(Gravity.RIGHT);
+            }
+        });
+
+        BannerSlider bannerSlider=(BannerSlider)findViewById(R.id.banner_slider1);
+        List<Banner> banners=new ArrayList<>();
+        banners.add(new DrawableBanner(R.drawable.s1));
+        banners.add(new DrawableBanner(R.drawable.s2));
+        banners.add(new DrawableBanner(R.drawable.s3));
+        banners.add(new DrawableBanner(R.drawable.s4));
+        banners.add(new DrawableBanner(R.drawable.s5));
+
+        bannerSlider.setBanners(banners);
+
     }
 
     @Override
