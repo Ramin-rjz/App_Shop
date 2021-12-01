@@ -16,5 +16,11 @@
         app:defaultIndicators="circle"
         app:interval="5000"
         />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/prdGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
